@@ -1,3 +1,9 @@
+import numpy as np
+from itertools import combinations as comb
+
+def combn(m, n):
+    return np.array(list(comb(range(m), n)))
+
 '''
 AB: numpy array where each row (instance) is \in [-1,1]^d
 CD: numpy array where each row (instance) is \in [-1,1]^d
