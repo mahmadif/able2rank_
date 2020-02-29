@@ -1,3 +1,7 @@
+'''
+AB: numpy array where each row (instance) is \in [-1,1]^d
+CD: numpy array where each row (instance) is \in [-1,1]^d
+'''
 def analogy(AB,CD):
     ''' equivalent analogies a:b::c:d b:a::d:c c:d::a:b d:c::b:a '''
     ''' equivalent analogies a:b::d:c b:a::c:d c:d::b:a d:c::a:b '''
@@ -13,12 +17,11 @@ def analogy(AB,CD):
 
 '''
 arr_trn: numpy array containing n instances \in [0,1]^d
-y_trn: rank of instances in arr_trn
+y_trn: numpy array of length n containing the rank of instances in arr_trn
 arr_tst: numpy array containing n instances \in [0,1]^d
-k: the no. of nearest neighbors
-agg: aggregation function to be used 
+k: (integer) the no. of nearest neighbors
+agg: (string) aggregation function to be used 
 '''
-
 def able2rank_arithmetic(arr_trn, y_trn, arr_tst, k, agg):
     arr_trn = arr_trn[ np.argsort(y_trn),: ]
     nr_trn = arr_trn.shape[0]
