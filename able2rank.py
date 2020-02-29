@@ -10,7 +10,15 @@ def analogy(AB,CD):
     if S.ndim==1:
         S = S.reshape(-1, len(S))
     return np.mean(S, axis=1)
-    
+
+'''
+arr_trn: numpy array containing n instances \in [0,1]^d
+y_trn: rank of instances in arr_trn
+arr_tst: numpy array containing n instances \in [0,1]^d
+k: the no. of nearest neighbors
+agg: aggregation function to be used 
+'''
+
 def able2rank_arithmetic(arr_trn, y_trn, arr_tst, k, agg):
     arr_trn = arr_trn[ np.argsort(y_trn),: ]
     nr_trn = arr_trn.shape[0]
